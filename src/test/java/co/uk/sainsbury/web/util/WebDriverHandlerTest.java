@@ -5,22 +5,27 @@ import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
 public class WebDriverHandlerTest {
 
-	WebDriverHandler handler = new WebDriverHandler();
+	private WebDriverHandler handler = new WebDriverHandler();
+	private WebDriver driver;
+
 	@Before
 	public void setUp() throws Exception {
+		driver = handler.getDriver();
 	}
-	
+
 	@After
 	public void tearDown() {
-		handler.getDriver().close();
+
 	}
+
 	@Test
 	public void testWebDriverHandler() {
-		Assert.assertNotNull(handler.getDriver());
-		
+		Assert.assertNotNull(driver);
+
 	}
 
 }

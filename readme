@@ -1,29 +1,42 @@
 README
 
 included:
-all source files
-this README
+source files
+README file
 pom.xml
-compiled jar - consoleapp-0.0.1-SNAPSHOT.jar
+compiled jar - WebScraperConsole-1.0.0-SNAPSHOT.jar
+
+Prerequisites
+============
+1. JDK 1.7 plus
+2. maven 3.x
+3. Firefox browser driver
 
 Description
 ===========
-- A simple console application that scraps a webpage and creates a JSON object.
-- It uses selenium library and uses firefox as the browser driver.
-- All the links and xpath expressions are hard coded (as constants) for simplicity
-- There are two service classes 
-	a) scrapper class which uses firefox driver to get the webpage data 
-	b) mapper which uses jackson data mapper to convert java object to json
-
+- A console Java/Spring application that scrapes a webpage by loading the url and the dynamic content and creates a JSON object s output.
+- Maven is used for dependency management
+- The application uses selenium java firefox driver library for loading url and the related dynamic content.
+The Classes used are as follows:
+- The SRC classes are as below 
+	1. ProductListWebpageScraper - Parses the webpage and return Json object for the product listing page 
+	2. ProductWebpageScraper - Loads the individual webpage and then parses the content to retrieve the product page related attributes
+	3. WebDriverFactory - Responsible for returning the shared Implementation of the web driver
+	4. WebDriverHandler - Responsible for handling the operations for life cycle of web driver
+	5. WebDriverHelper - Single control to the rest of the application for utility methods on web driver
+	6. ProductData and ProductListData - Data objects
+- There are 5 test cases classes also which covers the unit test case and behaviour test scenarios. Please note these behaviour test are 
+  slow as webpage has wait timer on it for loading the dynamic content   
 
 The project was created using Eclipse as a maven project, so can be run from Eclipse when downloaded or can be run from
-command line (directory where the pom.xml is present ) using jar created consoleapp-0.0.1-SNAPSHOT.jar
+command line (directory where the pom.xml is present ) using jar created WebScraperConsole-1.0.0-SNAPSHOT.jar
 
-Syntax: java -cp target/consoleapp-0.0.1-SNAPSHOT.jar uk.co.sainsburys.consoleapp.Consoleapp
+How to Run
+===========
+1. Download the application from git  
+2. Dependency management - open a cmd prompt : go to file location of pom.xml - then run "mvn package" 
+	and to run test "mvn test"
+3. To run the console application : java -cp target/WebScraperConsole-1.0.0-SNAPSHOT.jar uk.co.sainsbury.ScraperMain
 
 Since the webpage uses lot of dynamic content, I have used wait times which makes the application run slow.
 
-Areas for improvement
-=====================
-Configuration of the application can be improved to be more generic
-Exception handling can be improved

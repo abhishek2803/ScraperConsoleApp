@@ -22,7 +22,7 @@ public class WebDriverFactoryTest {
 		Assert.assertNotNull(driver);
 		}
 		finally{
-			driver.close();	
+			driver.quit();	
 		}
 		
 	}
