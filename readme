@@ -1,0 +1,29 @@
+README
+
+included:
+all source files
+this README
+pom.xml
+compiled jar - consoleapp-0.0.1-SNAPSHOT.jar
+
+Description
+===========
+- A simple console application that scraps a webpage and creates a JSON object.
+- It uses selenium library and uses firefox as the browser driver.
+- All the links and xpath expressions are hard coded (as constants) for simplicity
+- There are two service classes 
+	a) scrapper class which uses firefox driver to get the webpage data 
+	b) mapper which uses jackson data mapper to convert java object to json
+
+
+The project was created using Eclipse as a maven project, so can be run from Eclipse when downloaded or can be run from
+command line (directory where the pom.xml is present ) using jar created consoleapp-0.0.1-SNAPSHOT.jar
+
+Syntax: java -cp target/consoleapp-0.0.1-SNAPSHOT.jar uk.co.sainsburys.consoleapp.Consoleapp
+
+Since the webpage uses lot of dynamic content, I have used wait times which makes the application run slow.
+
+Areas for improvement
+=====================
+Configuration of the application can be improved to be more generic
+Exception handling can be improved
