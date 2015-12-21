@@ -35,4 +35,4 @@ How to Run
 2. Dependency management - open a cmd prompt : go to file location of pom.xml - then run "mvn package" 
 	and to run test "mvn test"
 3. To run the console application : java -cp target/WebScraperConsole-1.0.0-SNAPSHOT.jar uk.co.sainsbury.ScraperMain
-
+	In order to load the webpages dynamic content, there are wait conditions on visibility of elements so it takes time before printing the output.
