@@ -29,7 +29,6 @@ public class ProductWebpageScraper extends AbstractWebpageScraper {
 						By.cssSelector(ApplicationConstants.PRODUCT_TITLE));
 		data.setTitle(title.getText());
 		// size
-		System.out.println(getWebDriverHelper().getDriver().getPageSource());
 		int length = getWebDriverHelper().getDriver().getPageSource()
 				.getBytes().length;
 		data.setSize(String.valueOf(length / 1024) + ApplicationConstants.STRING_KB);
