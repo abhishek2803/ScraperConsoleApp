@@ -16,6 +16,7 @@ Description
 ===========
 - A console Java/Spring application that scrapes a webpage by loading the url and the dynamic content and creates a JSON object s output.
 - Maven is used for dependency management
+- Eclipse IDE for development
 - The application uses selenium java firefox driver library for loading url and the related dynamic content.
 The Classes used are as follows:
 - The SRC classes are as below 
@@ -28,15 +29,10 @@ The Classes used are as follows:
 - There are 5 test cases classes also which covers the unit test case and behaviour test scenarios. Please note these behaviour test are 
   slow as webpage has wait timer on it for loading the dynamic content   
 
-The project was created using Eclipse as a maven project, so can be run from Eclipse when downloaded or can be run from
-command line (directory where the pom.xml is present ) using jar created WebScraperConsole-1.0.0-SNAPSHOT.jar
-
 How to Run
 ===========
 1. Download the application from git  
 2. Dependency management - open a cmd prompt : go to file location of pom.xml - then run "mvn package" 
 	and to run test "mvn test"
 3. To run the console application : java -cp target/WebScraperConsole-1.0.0-SNAPSHOT.jar uk.co.sainsbury.ScraperMain
-
-Since the webpage uses lot of dynamic content, I have used wait times which makes the application run slow.
 
