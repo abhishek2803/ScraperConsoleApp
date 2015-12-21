@@ -26,6 +26,9 @@ public class ProductWebpageScraperTest {
 		ProductData productData = scraper.parseProductDetails(URL);
 		Assert.assertNotNull(productData);
 		Assert.assertEquals("Sainsbury's White Flesh Nectarines, Ripe & Ready x4", productData.getTitle());
+		Assert.assertNotNull(productData.getSize());
+		Assert.assertNotNull(productData.getDescription());
+		Assert.assertNotNull(productData.getUnitPrice());
 		
 	}
 	

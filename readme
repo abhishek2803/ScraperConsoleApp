@@ -11,6 +11,8 @@ Prerequisites
 1. JDK 1.7 plus
 2. maven 3.x
 3. Firefox browser driver
+4. Access to internet
+5. Git
 
 Description
 ===========
@@ -26,13 +28,13 @@ The Classes used are as follows:
 	4. WebDriverHandler - Responsible for handling the operations for life cycle of web driver
 	5. WebDriverHelper - Single control to the rest of the application for utility methods on web driver
 	6. ProductData and ProductListData - Data objects
-- There are 5 test cases classes also which covers the unit test case and behaviour test scenarios. Please note these behaviour test are 
-  slow as webpage has wait timer on it for loading the dynamic content   
+- There are 5 test cases classes which covers the unit test case and behaviour test scenarios. Please note these behaviour test are 
+  slow as webpage has wait time on them for loading the dynamic content.   
 
 How to Run
 ===========
-1. Download the application from git  
+1. Download the application from git location : https://github.com/abhishek2803/ScraperConsoleApp.git
 2. Dependency management - open a cmd prompt : go to file location of pom.xml - then run "mvn package" 
 	and to run test "mvn test"
-3. To run the console application : java -cp target/WebScraperConsole-1.0.0-SNAPSHOT.jar uk.co.sainsbury.ScraperMain
+3. To run the console application : java -cp WebScraperConsole-1.0.0-SNAPSHOT-jar-with-dependencies.jar co.uk.sainsbury.ScraperApp
 	In order to load the webpages dynamic content, there are wait conditions on visibility of elements so it takes time before printing the output.
