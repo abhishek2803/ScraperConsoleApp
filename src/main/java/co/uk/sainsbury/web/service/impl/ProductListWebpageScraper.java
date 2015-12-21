@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
 
-import co.uk.sainsbury.web.constant.WebConstants;
+import co.uk.sainsbury.web.constant.ApplicationConstants;
 import co.uk.sainsbury.web.data.ProductData;
 import co.uk.sainsbury.web.data.ProductListData;
 import co.uk.sainsbury.web.service.Scraper;
@@ -53,7 +53,7 @@ public class ProductListWebpageScraper extends ProductWebpageScraper
 				.until(ExpectedConditions.presenceOfElementLocated(By
 						.xpath(ID_PRODUCT_LISTER_UL)));
 		//look for elements with links
-		List<WebElement> webElements = driver.findElements(By.xpath(WebConstants.XPATH_PLP));
+		List<WebElement> webElements = driver.findElements(By.xpath(ApplicationConstants.XPATH_PLP));
 		//get the list of links		
 		final List<String> productUrls = getAllProductUrls(webElements);
 		ProductListData productListData = new ProductListData();
@@ -72,7 +72,7 @@ public class ProductListWebpageScraper extends ProductWebpageScraper
 	private List<String> getAllProductUrls(List<WebElement> findElements) {
 		final List<String> allLinks = new ArrayList<String>(findElements.size());
 		for (final WebElement webElement : findElements) {
-			final String href = webElement.getAttribute(WebConstants.ATTR_HREF);
+			final String href = webElement.getAttribute(ApplicationConstants.ATTR_HREF);
 			if (null != href) {
 				allLinks.add(href);
 			}

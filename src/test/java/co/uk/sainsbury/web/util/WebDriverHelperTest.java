@@ -1,7 +1,5 @@
 package co.uk.sainsbury.web.util;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,8 +26,6 @@ public class WebDriverHelperTest {
 		Assert.assertSame(driver, driver2);
 	}
 
-	
-	
 	@Test
 	public void testNavigateBrowserTo() {
 		helper.navigateBrowserTo("http://www.sainsburys.co.uk/shop/gb/groceries/ripe---ready/sainsburys-white-flesh-nectarines--ripe---ready-x4");

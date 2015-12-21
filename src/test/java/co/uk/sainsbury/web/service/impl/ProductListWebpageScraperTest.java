@@ -15,7 +15,6 @@ import org.springframework.test.context.ContextConfiguration;
 
 import co.uk.sainsbury.web.data.ProductData;
 import co.uk.sainsbury.web.data.ProductListData;
-import co.uk.sainsbury.web.util.WebDriverHelper;
 
 @ContextConfiguration()
 @RunWith(JUnit4.class)
@@ -24,6 +23,7 @@ public class ProductListWebpageScraperTest {
 
 	private ProductListWebpageScraper productListWebpageScraper = new ProductListWebpageScraper();
 	private WebDriver driver;
+
 	@Before
 	public void setUp() throws Exception {
 		driver = productListWebpageScraper.getWebDriverHelper().getDriver();
@@ -31,7 +31,7 @@ public class ProductListWebpageScraperTest {
 
 	@After
 	public void tearDown() {
-		
+
 	}
 
 	@Test
@@ -41,16 +41,9 @@ public class ProductListWebpageScraperTest {
 		Assert.assertNotNull(jsonProductList);
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void testParseProductListDetails() {
-		productListWebpageScraper.scrape(null);
-	}
-
 	@Test
 	public void testGetWebDriverHelper() {
-		
 		Assert.assertNotNull(driver);
-		
 	}
 
 	private ProductListData populateProductData() {
